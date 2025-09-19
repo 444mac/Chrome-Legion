@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chrome Legion</title>
+  
+  <!-- Google Font for Futuristic Look -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: #000;
+      color: #fff;
+      text-align: center;
+    }
+
+    header {
+      background: linear-gradient(90deg, #111, #444);
+      padding: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin: 0;
+      color: silver;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    nav {
+      margin-top: 1rem;
+    }
+
+    nav button {
+      background: none;
+      border: 2px solid silver;
+      color: white;
+      padding: 0.5rem 1rem;
+      margin: 0 0.5rem;
+      font-size: 1rem;
+      font-family: 'Orbitron', sans-serif;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    nav button:hover,
+    nav button.active {
+      background: silver;
+      color: black;
+    }
+
+    .content {
+      padding: 2rem;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    a.discord-link {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      border: 2px solid silver;
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    a.discord-link:hover {
+      background: silver;
+      color: black;
+    }
+
+    .roster {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 2rem auto;
+      text-align: left;
+    }
+
+    .roster-section {
+      background: #111;
+      padding: 1rem;
+      border: 1px solid #333;
+      border-radius: 8px;
+    }
+
+    .roster-section h2 {
+      color: silver;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .roster-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .roster-section li {
+      padding: 0.5rem;
+      border-bottom: 1px solid #333;
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Chrome Legion</h1>
+    <nav>
+      <button class="tab-button active" data-tab="join">Join Us</button>
+      <button class="tab-button" data-tab="roster">Roster</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Join Us (default tab) -->
+    <section id="join" class="content">
+      <p>Become part of Chrome Legion and join our growing community.</p>
+      <a class="discord-link" href="https://discord.gg/E3DK8GyW7Y" target="_blank">Join our Discord</a>
+    </section>
+
+    <!-- Roster -->
+    <section id="roster" class="content hidden">
+      <div class="roster">
+        <div class="roster-section">
+          <h2>Main Roster</h2>
+          <ul>
+            <li><span>Player1</span> <span>Captain</span></li>
+            <li><span>Player2</span> <span>Support</span></li>
+            <li><span>Player3</span> <span>Sniper</span></li>
+            <li><span>Player4</span> <span>Entry</span></li>
+            <li><span>Player5</span> <span>Flex</span></li>
+          </ul>
+        </div>
+        <div class="roster-section">
+          <h2>Pro Roster</h2>
+          <ul>
+            <li><span>Pro1</span> <span>IGL</span></li>
+            <li><span>Pro2</span> <span>Support</span></li>
+            <li><span>Pro3</span> <span>AWPer</span></li>
+            <li><span>Pro4</span> <span>Entry</span></li>
+            <li><span>Pro5</span> <span>Rifler</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const buttons = document.querySelectorAll('.tab-button');
+    const sections = document.querySelectorAll('main section');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // remove active from all buttons
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // hide all sections
+        sections.forEach(sec => sec.classList.add('hidden'));
+
+        // show selected section
+        document.getElementById(btn.dataset.tab).classList.remove('hidden');
+      });
+    });
+  </script>
+</body>
+</html>
