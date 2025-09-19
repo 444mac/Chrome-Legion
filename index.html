@@ -78,23 +78,34 @@
     }
 
     .roster {
-      max-width: 600px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      max-width: 1000px;
       margin: 2rem auto;
       text-align: left;
     }
 
-    .roster h2 {
+    .roster-section {
+      background: #111;
+      padding: 1rem;
+      border: 1px solid #333;
+      border-radius: 8px;
+    }
+
+    .roster-section h2 {
       color: silver;
       margin-bottom: 1rem;
       text-align: center;
     }
 
-    .roster ul {
+    .roster-section ul {
       list-style: none;
       padding: 0;
+      margin: 0;
     }
 
-    .roster li {
+    .roster-section li {
       padding: 0.5rem;
       border-bottom: 1px solid #333;
       display: flex;
@@ -115,20 +126,32 @@
     <!-- Join Us (default tab) -->
     <section id="join" class="content">
       <p>Become part of Chrome Legion and join our growing community.</p>
-      <a class="discord-link" href="https://discord.gg/YOURDISCORDINVITE" target="_blank">Join our Discord</a>
+      <a class="discord-link" href="https://discord.gg/E3DK8GyW7Y" target="_blank">Join our Discord</a>
     </section>
 
     <!-- Roster -->
     <section id="roster" class="content hidden">
       <div class="roster">
-        <h2>Team Roster</h2>
-        <ul>
-          <li><span>Player1</span> <span>Captain</span></li>
-          <li><span>Player2</span> <span>Support</span></li>
-          <li><span>Player3</span> <span>Sniper</span></li>
-          <li><span>Player4</span> <span>Entry</span></li>
-          <li><span>Player5</span> <span>Flex</span></li>
-        </ul>
+        <div class="roster-section">
+          <h2>Main Roster</h2>
+          <ul>
+            <li><span>Player1</span> <span>Captain</span></li>
+            <li><span>Player2</span> <span>Support</span></li>
+            <li><span>Player3</span> <span>Sniper</span></li>
+            <li><span>Player4</span> <span>Entry</span></li>
+            <li><span>Player5</span> <span>Flex</span></li>
+          </ul>
+        </div>
+        <div class="roster-section">
+          <h2>Pro Roster</h2>
+          <ul>
+            <li><span>Pro1</span> <span>IGL</span></li>
+            <li><span>Pro2</span> <span>Support</span></li>
+            <li><span>Pro3</span> <span>AWPer</span></li>
+            <li><span>Pro4</span> <span>Entry</span></li>
+            <li><span>Pro5</span> <span>Rifler</span></li>
+          </ul>
+        </div>
       </div>
     </section>
   </main>
